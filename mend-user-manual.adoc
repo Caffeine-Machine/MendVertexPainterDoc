@@ -1,0 +1,36 @@
+:author: Stanley Hailey
+:nick: Lee
+:email: slhaile01@caffeine-machine.com
+:editor: Mend Vertex Painter
+:name: Mend
+:shader: 'Unlit/Vertex Colors'
+:version: v1.0
+:toc: macro
+:toclevels: 3
+:experimental:
+
+
+'''
+{set:cellbgcolor:white}
+[cols="5a,95a,5a", frame="none", grid="none"]
+|===
+| >| == [big bold]#User Manual#|
+| | image::images/mend-splash-logo-800x389.png[] .^|
+|===
+'''
+<<<
+
+
+toc::[]
+:numbered:
+include::src-mend-doc.asc[tags=desc]
+
+include::src-mend-doc.asc[tags=features]
+
+include::src-mend-doc.asc[tags=usage-detail]
+
+include::src-mend-doc.asc[tags=controls]
+
+include::src-mend-doc.asc[tags=hotkeys]
+
+include::src-mend-doc.asc[tags=contact]
