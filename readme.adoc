@@ -25,3 +25,5 @@ include::src-mend-doc.asc[tags=todo]
 include::src-mend-doc.asc[tags=roadmap]
 
 include::src-mend-doc.asc[tags=contact]
+
+include::src-mend-doc.asc[]
