@@ -27,8 +27,6 @@ endif::[]
 :uri-contribute: {uri-rel-file-base}CONTRIBUTING.adoc
 :uri-license: {uri-rel-file-base}LICENSE.adoc
 
-kljasf
-
 
 == [big bold]#{SP}ReadMe#
 image::images/mend-splash-logo-800x389.png[]
