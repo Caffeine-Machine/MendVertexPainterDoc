@@ -8,6 +8,7 @@
 :toc: macro
 :toclevels: 3
 :experimental:
+:srcdir: src/
 
 
 '''
@@ -23,14 +24,168 @@
 
 toc::[]
 :numbered:
-include::src-mend-doc.asc[tags=desc]
+=== Description
+*{editor}*, a simple, flexible Unity extension. Made for users needing to encode vertex color data or create stunningly artistic polygons within Unity.
 
-include::src-mend-doc.asc[tags=features]
+=== Feature List
+Features supported in *{name}* {version}.
 
-include::src-mend-doc.asc[tags=usage-detail]
+* Display and edit vertex colors
+* Paint in perspective or orthographic view
+* Control brush size, strength and frequency
+* Lock individual RGBA or HSBA channels
+* Save edits to a file or make persistent edits directly to a mesh
+* Brush functions include:
+** Blend Color Value
+** Add Color
+** Subtract Color
+** Random Color
+** Average Vertex Colors
+* Paint options include:
+** Brushing front faces only
+** Uniform brushing for single strokes
 
-include::src-mend-doc.asc[tags=controls]
+[cols="2,.^11a,.^10a,2", grid="none", frame="none"]
+|===
+|| .Screenshot 1
+image::images/figure-sphere.png[]
+| .Screenshot 2
+image::images/figure-robot.png[] |
+|===
 
-include::src-mend-doc.asc[tags=hotkeys]
+=== Application Overview
 
-include::src-mend-doc.asc[tags=contact]
+==== Usage Details
+
+*{name}* can be accessed from the Unity menu by clicking _Window > {editor}_.   Once open {name} allows you to edit vertex colors of the selected Game Object shown in the _Game Object_ field.  The current selection must contain a Mesh for vertex color painting.  Activate the Paint button to start painting. *{name}* switches the shader to _{shader}_ to display vertex color edits while painting if _Show Vertex Colors_ is enabled.
+
+[cols="2a,3a,3a,2a", grid="none", frame="none"]
+|===
+| >.>| .Menu location
+image::images/figure-menu.png[]
+| .Mend editor window
+image::images/figure-window-basic.png[] |
+|===
+
+While painting *{name}* prevents unintentional manipulation or object reselection.  Deactivate the Paint button to allow transform manipulation on the object and restore the mesh shader.
+
+Vertex colors edits can be saved either directly to the Mesh or to a buffer which must be saved to file.   Use the _Mesh Target_ button to toggle between saving or buffering.  Use _Save Buffer_ to save a copy of the mesh to a chosen file.
+
+==== Editor Controls
+
+===== Game Object Selection
+Display or set the current selected game object.
+----
+Type:       UnityEngine.GameObject
+----
+
+===== Mesh Target Selection
+Displays the mesh to which edits will be saved.  Is set to the game object's mesh if it contains has a MeshFilter or SkinnedMeshRenderer.
+----
+Type:       UnityEngine.Mesh
+----
+
+===== Mesh Target State
+Set the edit saving mode to saving or buffering.
+----
+Type:       Enum { Saving, Buffering }
+Default:    Saving
+----
+
+===== Show Vertex Colors
+Set the option to enable or show or hide the vertex color shader.
+----
+Type:       bool
+Default:    true
+----
+
+===== Edit Back Faces
+Set the option to enable or disable editing back-faces.
+----
+Type:       bool
+Default:    true
+----
+
+
+===== Brush Size
+Set the size of the brush.  The value represents the size measured as a percentage of the screen.
+----
+Type:       float
+Default:    10.0
+Range:      [1.0, 50.0]
+----
+
+===== Brush Strength
+Set the blend strength of the brush.  The amount to lerp between the selected color and the current vertex color. A value of 1.0 maximizes the influence of the brushed color.
+----
+Type:       float
+Default:    1.0f
+Range:      [0.01f, 1.0f]
+----
+
+===== Stroke Frequency
+Set the brush application frequency in milliseconds while the left mouse button is down.
+----
+Type:       int
+Default:    10
+Range:      [1, 4000]
+----
+
+===== Uniform Stroke
+Vertices will only be affect once per stroke if enabled.
+----
+Type:       bool
+Default:    true
+----
+
+===== Brush Functions
+Set the function to use when applying color to vertices.
+----
+Type:       Enum { Value, Add, Subtract, Average, Random }
+Default:    Value
+----
+
+===== Brush Color
+Set the color apply to vertices.
+----
+Type:       UnityEngine.Color32
+Default:    Color32 (255, 255, 255, 255)
+----
+===== Channel Lock Mode
+Set the mode for channel locks between _red, blue, green, alpha_ and _hue, saturation, brightness/value, alpha_.
+
+----
+Type:       Enum { RGBA, HSBA }
+Default:    RGBA
+----
+===== Channel Locks
+Set the channels lock state while editing. Channels with a pressed button indicates that channel can be edited and has a channel lock value of _false_ .
+----
+Type:       bool[4]
+Default:    [false, false, false, false]
+----
+
+==== Shader Settings
+
+Mend will apply a shader on the mesh while in paint mode to display vertex colors. the wireframe color is exposed as an inspector property for _{shader}_ shader. Locate it in the Inspector under the Material component for the Mesh being painted.
+
+=== Hotkeys
+Available hotkeys are visible in editor tooltips.
+[cols=",3"]
+|===
+| Shortcut 				| Action
+
+| kbd:[Alt+1]			| Toggle Paint on or off
+| kbd:[Alt+2]			| Toggle display of vert color shader
+| kbd:[Alt+3]			| Toggle backFace editing on or off
+| kbd:[Alt+4]			| Toggle mode between buffering and saving
+| kbd:[Alt+5]			| Save mesh when buffering
+| kbd:[Shift+ScrollWheel]	| Resize paint brush
+| kbd:[Alt+ScrollWheel]		| Rescale paint strength
+|===
+
+=== Contact
+
+For questions, comments please contact {author} ({nick}) by email. +
+Email: {email} +
+Website: http://caffeine-machine.com
