@@ -188,4 +188,5 @@ Available hotkeys are visible in editor tooltips.
 
 For questions, comments please contact {author} ({nick}) by email. +
 Email: {email} +
+Support: https://github.com/Caffeine-Machine/MendVertexPainterDoc +
 Website: http://caffeine-machine.com
