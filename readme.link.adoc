@@ -1,3 +1,4 @@
+++++
 :author: Stanley Hailey
 :nick: Lee
 :email: zeroone@caffeine-machine.com
@@ -5,44 +6,24 @@
 :name: Mend
 :version: v1.0
 :experimental:
-
-:uri-org: https://github.com/asciidoctor
-:uri-repo: {uri-org}/asciidoctor
-:uri-asciidoctorj: {uri-org}/asciidoctorj
-:uri-asciidoctorjs: {uri-org}/asciidoctor.js
-:uri-project: http://asciidoctor.org
-//ifdef::env-site[:uri-project: link:]
-:uri-docs: {uri-project}/docs
-:uri-news: {uri-project}/news
-:uri-manpage: {uri-project}/man/asciidoctor
-:uri-issues: {uri-repo}/issues
-:uri-contributors: {uri-repo}/graphs/contributors
-:uri-rel-file-base: link:
-:uri-rel-tree-base: link:
-ifdef::env-site[]
-:uri-rel-file-base: {uri-repo}/blob/master/
-:uri-rel-tree-base: {uri-repo}/tree/master/
-endif::[]
-:uri-changelog: {uri-rel-file-base}CHANGELOG.adoc
-:uri-contribute: {uri-rel-file-base}CONTRIBUTING.adoc
-:uri-license: {uri-rel-file-base}LICENSE.adoc
+:srcdir: src/
 
 
 == [big bold]#{SP}ReadMe#
 image::images/mend-splash-logo-800x389.png[]
 {sp}
 
+include::src/mend-doc.src.adoc[tags=desc]
 
-include::src-mend-doc.asc[tags=desc]
+include::src/mend-doc.src.adoc[tags=features]
 
-include::src-mend-doc.asc[tags=features]
+include::src/mend-doc.src.adoc[tags=usage-basic]
 
-include::src-mend-doc.asc[tags=usage-basic]
+include::src/mend-doc.src.adoc[tags=hotkeys]
 
-include::src-mend-doc.asc[tags=hotkeys]
+include::src/mend-doc.src.adoc[tags=todo]
 
-include::src-mend-doc.asc[tags=todo]
+include::src/mend-doc.src.adoc[tags=roadmap]
 
-include::src-mend-doc.asc[tags=roadmap]
-
-include::src-mend-doc.asc[tags=contact]
+include::src/mend-doc.src.adoc[tags=contact]
+++++
