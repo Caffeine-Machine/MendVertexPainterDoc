@@ -1,0 +1,27 @@
+:author: Stanley Hailey
+:nick: Lee
+:email: zeroone@caffeine-machine.com
+:editor: Mend Vertex Painter
+:name: Mend
+:version: v1.0
+:experimental:
+:srcdir: src/
+
+
+== [big bold]#{SP}ReadMe#
+image::images/mend-splash-logo-800x389.png[]
+{sp}
+
+include::src/mend-doc.src.adoc[tags=desc]
+
+include::src/mend-doc.src.adoc[tags=features]
+
+include::src/mend-doc.src.adoc[tags=usage-basic]
+
+include::src/mend-doc.src.adoc[tags=hotkeys]
+
+include::src/mend-doc.src.adoc[tags=todo]
+
+include::src/mend-doc.src.adoc[tags=roadmap]
+
+include::src/mend-doc.src.adoc[tags=contact]
